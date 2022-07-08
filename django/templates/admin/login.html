@@ -1,0 +1,688 @@
+{% load static i18n widget_tweaks %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Shipilhih &mdash; Make Your Business More Profitable</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Nunito:300,400,700"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="{% static '/fonts/icomoon/style.css' %}" />
+    <link rel="stylesheet" href="{% static '/css/bootstrap.min.css' %}" />
+    <link rel="stylesheet" href="{% static '/css/jquery-ui.css' %}" />
+    <link rel="stylesheet" href="{% static '/css/jquery.fancybox.min.css' %}" />
+    <link rel="stylesheet" href="{% static '/css/bootstrap-datepicker.css' %}" />
+    <link rel="stylesheet" href="{% static '/fonts/flaticon/flaticon.css' %}" />
+    <link rel="stylesheet" href="{% static '/css/aos.css' %}" />
+    <link rel="stylesheet" href="{% static '/css/style.min.css' %}" />
+    <link rel="stylesheet" href="{% static '/css/style.css' %}" />
+    <link rel="icon" href="images/logo.jpg" type="image/jpg" sizes="32*32">
+    <style>
+        .video-responsive { 
+        overflow:hidden; 
+        padding-bottom:56.25%; 
+        position:relative; 
+        height:0;
+        }
+        @media (max-width: 991.98px) {
+        .site-blocks-cover h1 {
+            font-size:26px !important;
+        }
+        }
+        .video-responsive iframe {
+        left:0; 
+        top:0; 
+        height:100%;
+        width:100%;
+        position:absolute;
+        }
+        .site-blocks-cover > .container > .row {
+         height: auto !important;
+       }
+       .site-blocks-cover, .site-blocks-cover > .container > .row {
+        height: auto !important;
+        }
+        .image-home li{
+            margin-bottom:0.2em;
+            text-indent:0.4em;
+            font-weight:bold;
+            list-style:none;
+            display: flex;
+           align-items: center;
+            }
+        .image-home .favicon{
+            background-repeat:no-repeat;
+            margin: 2px 6px 0 0;
+            width: 16px;
+            height: 16px;
+            }
+        .image-home .favicon[data-type="ke"]{
+            background-image:url(https://static.dwcdn.net/css/flag-icons/flags/4x3/ke.svg); 
+        }
+        .image-home .favicon[data-type="gh"]{
+            background-image:url(https://static.dwcdn.net/css/flag-icons/flags/4x3/gh.svg); 
+        }
+        .image-home .favicon[data-type="rw"]{
+            background-image:url(https://static.dwcdn.net/css/flag-icons/flags/4x3/rw.svg); 
+        }
+        .image-home .favicon[data-type="ug"]{
+            background-image:url(https://static.dwcdn.net/css/flag-icons/flags/4x3/ml.svg); 
+        }
+        .text-logo {
+          padding-top: 115px;
+
+        }
+        .site-navbar .site-navigation .site-menu .active,
+        .site-navbar .site-navigation .site-menu > li > a:hover,
+        .site-mobile-menu .site-nav-wrap li .active,
+        .site-mobile-menu .site-nav-wrap a:hover {
+          color: #d94fd3 !important;
+        }
+        .btn.btn-primary {
+          background: #d94fd3 !important;
+          border-color: #d94fd3 !important;
+          -webkit-box-shadow: 0 4px 20px -5px rgb(217 79 211 / 40%);
+          box-shadow: 0 4px 20px -5px rgb(217 79 211 / 40%);
+        }
+        .btn.btn-primary:hover {
+          background: #d94fd3 !important;
+          border-color: #d94fd3 !important;
+          -webkit-box-shadow: 0 4px 20px -5px rgb(217 79 211 / 40%) !important;
+          box-shadow: 0 4px 20px -5px rgb(217 79 211 / 40%) !important;
+        }
+        .unit-4:hover {
+          background: #d94fd3 !important;
+          -webkit-box-shadow: none;
+          box-shadow: none;
+        }
+        .unit-4 .unit-4-icon .icon-wrap {
+          background-color: #d94fd3;
+        }
+        .unit-4:hover .icon-wrap {
+          background-color: #fff;
+        }
+        .unit-4:hover .icon-wrap span {
+          color: #d94fd3 !important;
+        }
+    </style>    
+  </head>
+
+  <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+    <div id="overlayer"></div>
+    <div class="loader">
+      <div class="spinner-border text-primary" role="status" style="color: #d94fd3 !important;">
+        <span class="sr-only">Loading...</span>
+      </div>
+    </div>
+    <div class="site-wrap" id="home-section">
+      <div class="site-mobile-menu site-navbar-target">
+        <div class="site-mobile-menu-header">
+          <div class="mt-3 site-mobile-menu-close">
+            <i class="fa-solid fa-xmark js-menu-toggle" style="font-size: 30px;"></i>
+          </div>
+        </div>
+        <div class="site-mobile-menu-body"></div>
+      </div>
+      <header
+        class="py-4 site-navbar js-sticky-header site-navbar-target"
+        role="banner"
+      >
+        <div class="container">
+          <div class="row align-items-center imglogo">
+            <div class="col-6 col-md-3 col-xl-4 d-block">
+              <h1 class="mb-0 site-logo">
+                <a href="/" class="mb-0 text-black h2"
+                  >
+                  <!-- <img src="images/sep/logo4444.svg" alt=""> -->
+                  <span style="color: #d94fd3;font-weight: bold;">Shipilhih</span>
+                </a>
+              </h1>
+            </div>
+            <div class="col-12 col-md-9 col-xl-8 main-menu">
+              <nav
+                class="text-right site-navigation position-relative"
+                role="navigation"
+              >
+                <ul
+                  class="pl-0 ml-0 mr-auto site-menu main-menu js-clone-nav d-none d-lg-block"
+                >
+                  <li><a href="#home-section" class="nav-link">Home</a></li>
+                  <li>
+                    <a href="#features-section" class="nav-link">Features</a>
+                  </li>
+                  <li>
+                    <a href="#about-section" class="nav-link">About Us</a>
+                  </li>
+                  <li>
+                    <a href="#contact-section" class="nav-link">Login</a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+            <div class="col-6 col-md-9 d-inline-block d-lg-none ml-md-0">
+              <a
+                href="#"
+                class="float-right text-black site-menu-toggle js-menu-toggle"
+                ><i class="fa-solid fa-bars" style="font-size: 30px;cursor: pointer;"></i></a>
+            </div>
+          </div>
+        </div>
+      </header>
+      <div class="site-blocks-cover" style="overflow: hidden">
+        <div class="container">
+          <div class="row" style="align-items: center;">
+            <div class="col-md-6 image-home" style="position: relative; min-width: 100%; text-align: center;" data-aos="fade-up" data-aos-delay="200">
+                <div class="mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="">
+                    <h1 class="text-logo" style="margin-bottom: 30px;">
+                        With <span style="color: #d94fd3">Shipilhih,</span> Africa becomes
+                        close.
+                    </h1>
+                    <p style="max-width:500px; margin:0 auto">
+                        We offer a complete set of services, warehousing, call
+                        center, packing and shipping, From your country to different west African countries.
+                    </p>
+                      <div style="display: flex;align-items: center;justify-content: center;margin-top: 20px;">
+                        <ul style="display: flex;justify-content: center;flex-wrap: wrap;">
+                            <li style="margin: 5px 20px;">
+                                <div data-type="ke" class="favicon favicon-genealogy"></div>
+                                <span class="js-gps-track question-hyperlink mb0">Kenya</span>
+                
+                            </li>
+                            <li style="margin: 5px 20px;">
+                                <div data-type="gh" class="favicon favicon-genealogy"></div>
+                                <span class="js-gps-track question-hyperlink mb0">Ghana</span>
+                
+                            </li>
+
+                            <li style="margin: 5px 20px;">
+                                <div data-type="rw" class="favicon favicon-genealogy"></div>
+                                <span class="js-gps-track question-hyperlink mb0">Rwanda</span>
+                
+                            </li>
+                            <li style="margin: 5px 20px;">
+                                <div data-type="ug" class="favicon favicon-genealogy"></div>
+                                <span class="js-gps-track question-hyperlink mb0">Uganda</span>
+                
+                            </li>
+                        </ul>
+                      </div>
+                        <h5 style="margin-bottom: 30px;">
+                        with shipilhih we
+                        pick, pack, assemble and ship.
+                        </h5>
+                    <div class="btn-home">
+                        <a href="#contact-section" class="mb-2 mr-2 btn btn-primary"
+                        >Login</a
+                        >
+                    </div>
+                    </div>
+                </div>
+            </div>           
+          </div>
+        </div>
+      </div>
+      <div class="site-section mt-5" id="features-section">
+        <div class="container">
+          <div
+            class="mb-5 text-center row justify-content-center"
+            data-aos="fade-up"
+          >
+            <div class="mb-5 text-center col-11">
+              <h2 class="section-title">Features</h2>
+              <p>
+                Streamlined fulfillment from your online store to your
+                customer’s door
+              </p>
+            </div>
+          </div>
+          <div class="row align-items-stretch">
+            <div class="mb-4 col-md-6 col-lg-4 mb-lg-4" data-aos="fade-up">
+              <div class="unit-4 d-block">
+                <div class="mb-3 unit-4-icon">
+                  <span class="icon-wrap"
+                    >
+                  <span>
+                    <svg aria-hidden="true" width="40" height="40" focusable="false" data-prefix="fas" data-icon="shipping-fast"
+                     class="svg-inline--fa fa-shipping-fast fa-w-20" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
+                    <path fill="currentColor"
+        d="M208 320h384c8.8 0 16-7.2 16-16V48c0-8.8-7.2-16-16-16H448v128l-48-32-48 32V32H208c-8.8 0-16 7.2-16 16v256c0 8.8 7.2 16 16 16zm416 64H128V16c0-8.8-7.2-16-16-16H16C7.2 0 0 7.2 0 16v32c0 8.8 7.2 16 16 16h48v368c0 8.8 7.2 16 16 16h82.9c-1.8 5-2.9 10.4-2.9 16 0 26.5 21.5 48 48 48s48-21.5 48-48c0-5.6-1.2-11-2.9-16H451c-1.8 5-2.9 10.4-2.9 16 0 26.5 21.5 48 48 48s48-21.5 48-48c0-5.6-1.2-11-2.9-16H624c8.8 0 16-7.2 16-16v-32c0-8.8-7.2-16-16-16z">
+    </path>
+</svg>
+                  </span>
+                  </span>
+                </div>
+                <div>
+                  <h3>Picking products</h3>
+                  <p>Connect your store and send us your products</p>
+                </div>
+              </div>
+            </div>
+            <div
+              class="mb-4 col-md-6 col-lg-4 mb-lg-4"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              <div class="unit-4 d-block">
+                <div class="mb-3 unit-4-icon">
+                  <span class="icon-wrap"
+                    >
+                    <span>
+                      <svg aria-hidden="true" width="40" height="40" focusable="false" data-prefix="fas" data-icon="shipping-fast"
+    class="svg-inline--fa fa-shipping-fast fa-w-20" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
+    <path fill="currentColor"
+        d="M560 288h-80v96l-32-21.3-32 21.3v-96h-80c-8.8 0-16 7.2-16 16v192c0 8.8 7.2 16 16 16h224c8.8 0 16-7.2 16-16V304c0-8.8-7.2-16-16-16zm-384-64h224c8.8 0 16-7.2 16-16V16c0-8.8-7.2-16-16-16h-80v96l-32-21.3L256 96V0h-80c-8.8 0-16 7.2-16 16v192c0 8.8 7.2 16 16 16zm64 64h-80v96l-32-21.3L96 384v-96H16c-8.8 0-16 7.2-16 16v192c0 8.8 7.2 16 16 16h224c8.8 0 16-7.2 16-16V304c0-8.8-7.2-16-16-16z">
+    </path>
+</svg>
+                    </span>
+                  </span>
+                </div>
+                <div>
+                  <h3>Warehousing and storage</h3>
+                  <p>
+                    We store your inventory securely in our fulfillment centers
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div
+              class="mb-4 col-md-6 col-lg-4 mb-lg-4"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              <div class="unit-4 d-block">
+                <div class="mb-3 unit-4-icon">
+                  <span class="icon-wrap">
+                    <span>
+
+                      <svg aria-hidden="true" width="40" height="40" focusable="false" data-prefix="fas" data-icon="shipping-fast"
+    class="svg-inline--fa fa-shipping-fast fa-w-20" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
+    <path fill="currentColor"
+        d="M624 352h-16V243.9c0-12.7-5.1-24.9-14.1-33.9L494 110.1c-9-9-21.2-14.1-33.9-14.1H416V48c0-26.5-21.5-48-48-48H112C85.5 0 64 21.5 64 48v48H8c-4.4 0-8 3.6-8 8v16c0 4.4 3.6 8 8 8h272c4.4 0 8 3.6 8 8v16c0 4.4-3.6 8-8 8H40c-4.4 0-8 3.6-8 8v16c0 4.4 3.6 8 8 8h208c4.4 0 8 3.6 8 8v16c0 4.4-3.6 8-8 8H8c-4.4 0-8 3.6-8 8v16c0 4.4 3.6 8 8 8h208c4.4 0 8 3.6 8 8v16c0 4.4-3.6 8-8 8H64v128c0 53 43 96 96 96s96-43 96-96h128c0 53 43 96 96 96s96-43 96-96h48c8.8 0 16-7.2 16-16v-32c0-8.8-7.2-16-16-16zM160 464c-26.5 0-48-21.5-48-48s21.5-48 48-48 48 21.5 48 48-21.5 48-48 48zm320 0c-26.5 0-48-21.5-48-48s21.5-48 48-48 48 21.5 48 48-21.5 48-48 48zm80-208H416V144h44.1l99.9 99.9V256z">
+    </path>
+</svg>
+                    </span>
+                </span>
+                </div>
+                <div>
+                  <h3>Automatic and fast</h3>
+                  <p>Your customer places an order on your store</p>
+                </div>
+              </div>
+            </div>
+            <div class="mb-4 col-md-6 col-lg-4 mb-lg-4" data-aos="fade-up">
+              <div class="unit-4 d-block">
+                <div class="mb-3 unit-4-icon">
+                  <span class="icon-wrap"
+                    ><span>
+
+                      <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-headset" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M8 1a5 5 0 0 0-5 5v4.5H2V6a6 6 0 1 1 12 0v4.5h-1V6a5 5 0 0 0-5-5z"/>
+    <path d="M11 8a1 1 0 0 1 1-1h2v4a1 1 0 0 1-1 1h-1a1 1 0 0 1-1-1V8zM5 8a1 1 0 0 0-1-1H2v4a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1V8z"/>
+    <path fill-rule="evenodd" d="M13.5 8.5a.5.5 0 0 1 .5.5v3a2.5 2.5 0 0 1-2.5 2.5H8a.5.5 0 0 1 0-1h3.5A1.5 1.5 0 0 0 13 12V9a.5.5 0 0 1 .5-.5z"/>
+    <path d="M6.5 14a1 1 0 0 1 1-1h1a1 1 0 1 1 0 2h-1a1 1 0 0 1-1-1z"/>
+  </svg>
+                    </span></span
+                  ></span>
+                </div>
+                <div>
+                  <h3>Confirmation</h3>
+                  <p>Our confirmation team confirms your orders</p>
+                </div>
+              </div>
+            </div>
+            <div
+              class="mb-4 col-md-6 col-lg-4 mb-lg-4"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              <div class="unit-4 d-block">
+                <div class="mb-3 unit-4-icon">
+                  <span class="icon-wrap"
+                    >
+                    <span>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-wallet-fill" viewBox="0 0 16 16">
+  <path d="M1.5 2A1.5 1.5 0 0 0 0 3.5v2h6a.5.5 0 0 1 .5.5c0 .253.08.644.306.958.207.288.557.542 1.194.542.637 0 .987-.254 1.194-.542.226-.314.306-.705.306-.958a.5.5 0 0 1 .5-.5h6v-2A1.5 1.5 0 0 0 14.5 2h-13z"/>
+  <path d="M16 6.5h-5.551a2.678 2.678 0 0 1-.443 1.042C9.613 8.088 8.963 8.5 8 8.5c-.963 0-1.613-.412-2.006-.958A2.679 2.679 0 0 1 5.551 6.5H0v6A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-6z"/>
+</svg>
+                    </span>
+                </span>
+                </div>
+                <div>
+                  <h3>Packing orders</h3>
+                  <p>After confirming orders, we pack, and add labels to the order,</p>
+                </div>
+              </div>
+            </div>
+             <div
+              class="mb-4 col-md-6 col-lg-4 mb-lg-4"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              <div class="unit-4 d-block">
+                <div class="mb-3 unit-4-icon">
+                  <span class="icon-wrap"
+                    >
+                  <span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-truck" viewBox="0 0 16 16">
+                   <path fill-rule="evenodd" d="M0 3.5A1.5 1.5 0 0 1 1.5 2h9A1.5 1.5 0 0 1 12 3.5V5h1.02a1.5 1.5 0 0 1 1.17.563l1.481 1.85a1.5 1.5 0 0 1 .329.938V10.5a1.5 1.5 0 0 1-1.5 1.5H14a2 2 0 1 1-4 0H5a2 2 0 1 1-3.998-.085A1.5 1.5 0 0 1 0 10.5v-7zm1.294 7.456A1.999 1.999 0 0 1 4.732 11h5.536a2.01 2.01 0 0 1 .732-.732V3.5a.5.5 0 0 0-.5-.5h-9a.5.5 0 0 0-.5.5v7a.5.5 0 0 0 .294.456zM12 10a2 2 0 0 1 1.732 1h.768a.5.5 0 0 0 .5-.5V8.35a.5.5 0 0 0-.11-.312l-1.48-1.85A.5.5 0 0 0 13.02 6H12v4zm-9 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm9 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
+                  </svg>
+                  </span>
+                  </span>
+                </div>
+                <div>
+                  <h3>Shipping</h3>
+                  <p>We schedule the shipping daily, in order to ship the order to your customer </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="feature-big">
+        <div class="container">
+          <div class="mb-5 row site-section">
+            <div class="col-lg-7 cont-img" data-aos="fade-right">
+              <img
+                src="/media/Warehousing.svg"
+                alt="Image"
+                class="img-fluid"
+              />
+            </div>
+            <div class="ml-auto col-lg-5 pl-lg-5 mt-md-5">
+              <h2 class="text-black">Warehousing</h2>
+              <p class="mb-4">
+                 We store goods shipped by our customers in our Warehouse.
+                  Shipilhih disposes of many storage facilities,strategically
+                   located to allowthe optimization of delivery time and the 
+                   decrease of delivery cost
+                  We provide adequate warehousing spaces for ongoing storage of goods that is supposed to be shipped and space for purpose of packing and preparing for shipping.
+
+              </p>
+            </div>
+          </div>
+          <div class="mt-5 mb-5 row site-section">
+            <div class="order-1 col-lg-7 order-lg-2 cont-img" data-aos="fade-left">
+              <img
+                src="/media/Confirmation.svg"
+                alt="Image"
+                class="img-fluid"
+              />
+            </div>
+            <div class="order-2 mt-5 mr-auto col-lg-5 pr-lg-5 order-lg-1">
+              <h2 class="text-black">Confirmation</h2>
+              <p class="mb-4">
+                We know that cost optimization is an important common goal for both of us. Therefore, we continue to improve our global customer service operation in management and in contact center technology to achieve the maximum cost reduction and improve service efficiency for our customers.
+Our call center team is composed of experience sales force, committed in giving the best image for your clients, and in increasing the efficiency of your service. 
+ 
+              </p>
+              
+            </div>
+          </div>
+          <div class="mb-5 row site-section">
+            <div class="col-lg-7 cont-img" data-aos="fade-right">
+              <img
+                src="/media/Packing.svg"
+                alt="Image"
+                class="img-fluid"
+              />
+            </div>
+            <div class="ml-auto col-lg-5 pl-lg-5 mt-md-5">
+              <h2 class="text-black">Packing</h2>
+              <p class="mb-4">
+               Immediately after a customer places an order on your site, order items are checked and packed in a poly mailer, and a shipping label containing all the significant informationsis added to it. Your order is now ready for shipping, 
+              </p>
+            </div>
+          </div>
+          <div class="mt-5 mb-5 row site-section">
+            <div class="order-1 col-lg-7 order-lg-2 cont-img" data-aos="fade-left">
+              <img
+                src="/media/Shipping.svg"
+                alt="Image"
+                class="img-fluid"
+              />
+            </div>
+            <div class="order-2 mt-5 mr-auto col-lg-5 pr-lg-5 order-lg-1">
+              <h2 class="text-black">Shipping</h2>
+              <p class="mb-4">
+               A shipping schedule is established on a daily basis. Our delivery team insures the delivery of your products to your customer’s door without undue delay. We also provide the settlement of cash on delivery payments in Senegal.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="site-section bg-light" id="about-section">
+        <div class="container">
+          <div class="mb-5 row">
+            <div class="text-center col-12">
+              <h2 class="mb-3 section-title titre-about">About Us</h2>
+            </div>
+          </div>
+          <div class="mb-5 row contact-cont">
+            <div class="col-lg-6 cont-img " data-aos="fade-right">
+              <img
+                src="/media/About Us.svg"
+                alt="Image"
+                class="img-fluid"
+              />
+            </div>
+            <div class="ml-auto col-lg-5 pl-lg-5 cont-matg">
+              <h2>Shipilhih</h2>
+              <hr />
+              <p class="mb-4">
+                Shipilhih is a company operating in the field of ecommerce in
+                Senegal, and soon in West African countries. We take in charge,
+                for the benefit of our customers their activities of
+                warehousing, confirmation, and delivery. Our mission is to give
+                you access to the West African countries market, and allow you
+                to deliver the best service for your customers. With Shipilhih,
+                you are insured to improve transit times, shipping costs, and
+                the delivery experience for our customers.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="site-section bg-image2 overlay"
+        id="contact-section"
+        style="background-image: url(/media/login_form_bg.jpeg); background-position: center center;background-size: cover;"
+      >
+        <div class="container">
+          <div class="mb-5 row">
+            <div class="text-center col-12">
+              <h2 class="mb-3 text-white section-title titre-subs">Login</h2>
+            </div>
+          </div>
+          <div class="row justify-content-center">
+            <div class="mb-5 col-lg-7">
+              <form action="{{ app_path }}" method="post" id="login-form" class="p-5 bg-white">
+                {% csrf_token %} 
+                <h2 class="mb-5 text-black h4" align="center">Login</h2>
+
+                {% if form.non_field_errors %}
+                <p class="alert alert-danger">
+                  Please enter the correct username and password for a personal account. Note that both fields can be case sensitive.
+                </p>
+                {% endif %}
+                <div class="row form-group">
+                  <div class="mb-3 col-12 mb-md-0">
+                    <label class="text-black " for="fullname">Username</label>
+                    <input
+                      type="text"
+                      name="username"
+                      id="fullname"
+                      class="form-control rounded-0"
+                    />
+                  </div>
+                </div>
+                <div class="row form-group">
+                  <div class="col-md-12">
+                    <label class="text-black" for="email">Password</label>
+                    <input
+                      type="password"
+                      name="password"
+                      id="email"
+                      class="form-control rounded-0"
+                    />
+                  </div>
+                </div>
+                <div class="row form-group">
+                  <div class="col-md-12 btn-contact" style="display: flex; align-items: center; justify-content: center;">
+                    <input
+                      type="submit"
+                      value="Login"
+                      class="mb-2 mr-2 btn btn-primary"
+                    />
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="py-5 text-center footer">
+        <div class="container">
+          <div class="mb-5 row">
+            <div class="col-lg-6 media">
+              <p class="mb-0">
+                <a href="#" class="p-3"><i style="color: #d94fd3;" class="fa-brands fa-facebook-f"></i></a>
+                <a href="#" class="p-3"><i style="color: #d94fd3;" class="fa-brands fa-twitter"></i></a>
+                <a href="#" class="p-3"><i style="color: #d94fd3;" class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="p-3"><i style="color: #d94fd3;" class="fa-brands fa-linkedin-in"></i></a>
+                <a href="#" class="p-3"><i style="color: #d94fd3;" class="fa-brands fa-pinterest"></i></a>
+              </p>
+            </div>
+            <div class="col-lg-6">
+              <div class="row">
+                 <div class="col-lg-6">         
+                  <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="23"
+                  height="23"
+                  fill="currentColor"
+                  class="bi bi-envelope-fill"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    fill="#d94fd3"
+                    fill-rule="evenodd"
+                    d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555zM0 4.697v7.104l5.803-3.558L0 4.697zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757zm3.436-.586L16 11.801V4.697l-5.803 3.546z"
+                  />
+                </svg>
+                  <span class="sub-title ">
+                    <a style="color: #d94fd3;" href="mailto:contact@shipilhih.com?">contact@shipilhih.com</a>
+                    </span>
+              </div>
+              <div class="col-lg-6">
+
+
+                <?xml version="1.0" encoding="iso-8859-1"?>
+                <svg version="1.1" id="Capa_1" width="24" height="23" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+  y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+  <path style="fill:#d94fd3;" d="M256.064,0h-0.128l0,0C114.784,0,0,114.816,0,256c0,56,18.048,107.904,48.736,150.048l-31.904,95.104
+  l98.4-31.456C155.712,496.512,204,512,256.064,512C397.216,512,512,397.152,512,256S397.216,0,256.064,0z" />
+  <path style="fill:#FAFAFA;" d="M405.024,361.504c-6.176,17.44-30.688,31.904-50.24,36.128c-13.376,2.848-30.848,5.12-89.664-19.264
+  C189.888,347.2,141.44,270.752,137.664,265.792c-3.616-4.96-30.4-40.48-30.4-77.216s18.656-54.624,26.176-62.304
+  c6.176-6.304,16.384-9.184,26.176-9.184c3.168,0,6.016,0.16,8.576,0.288c7.52,0.32,11.296,0.768,16.256,12.64
+  c6.176,14.88,21.216,51.616,23.008,55.392c1.824,3.776,3.648,8.896,1.088,13.856c-2.4,5.12-4.512,7.392-8.288,11.744
+  c-3.776,4.352-7.36,7.68-11.136,12.352c-3.456,4.064-7.36,8.416-3.008,15.936c4.352,7.36,19.392,31.904,41.536,51.616
+  c28.576,25.44,51.744,33.568,60.032,37.024c6.176,2.56,13.536,1.952,18.048-2.848c5.728-6.176,12.8-16.416,20-26.496
+  c5.12-7.232,11.584-8.128,18.368-5.568c6.912,2.4,43.488,20.48,51.008,24.224c7.52,3.776,12.48,5.568,14.304,8.736
+  C411.2,329.152,411.2,344.032,405.024,361.504z" />
+
+</svg>
+                  <span class="sub-title "> <a style="color: #d94fd3;" href="https://wa.me/00212659506326" target="_blank" >+212 6 59 50 63 26</a></span>
+              </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <p class="mb-0">
+                Copyright &copy;
+                <script>
+                  document.write(new Date().getFullYear());
+                </script>
+                All rights reserved |
+                <a style="color: #d94fd3;" href="/">Shipilhih.com</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="modal fade"
+      id="subscribed"
+      tabindex="-1"
+      role="dialog"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Thank you</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>You're subscribed successfully</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"
+        integrity="sha512-DNeDhsl+FWnx5B1EQzsayHMyP6Xl/Mg+vcnFPXGNjUZrW28hQaa1+A4qL9M+AiOMmkAhKAWYHh1a+t6qxthzUw=="
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.min.css"
+        integrity="sha512-yye/u0ehQsrVrfSd6biT17t39Rg9kNc+vENcCXZuMz2a+LWFGvXUnYuWUW6pbfYj1jcBb/C39UZw2ciQvwDDvg=="
+        crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js"
+        integrity="sha512-BNZ1x39RMH+UYylOW419beaGO0wqdSkO7pi1rYDYco9OL3uvXaC/GTqA5O4CVK2j4K9ZkoDNSSHVkEQKkgwdiw=="
+        crossorigin="anonymous"></script>
+
+<script>
+    var input = document.querySelector("#phone");
+    window.intlTelInput(input, {
+        separateDialCode: true,
+  excludeCountries: ["eh"],
+        customPlaceholder: function (
+            selectedCountryPlaceholder,
+            selectedCountryData
+        ) {
+            return "e.g. " + selectedCountryPlaceholder;
+        },
+    });
+</script>
+    <!-- {% static '/js/' %} -->
+    <script src="{% static '/js/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static '/js/jquery-ui.js' %}"></script>
+    <script src="{% static '/js/popper.min.js' %}"></script>
+    <script src="{% static '/js/bootstrap.min.js' %}"></script>
+    <script src="{% static '/js/jquery.countdown.min.js' %}"></script>
+    <script src="{% static '/js/bootstrap-datepicker.min.js' %}"></script>
+    <script src="{% static '/js/jquery.easing.1.3.js' %}"></script>
+    <script src="{% static '/js/aos.js' %}"></script>
+    <script src="{% static '/js/jquery.fancybox.min.js' %}"></script>
+    <script src="{% static '/js/jquery.sticky.js' %}"></script>
+    <script src="{% static '/js/main.js' %}"></script>
+
+
+
+  </body>
+</html>

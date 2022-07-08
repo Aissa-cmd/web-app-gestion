@@ -1,0 +1,6 @@
+{% load i18n %}
+{% load admin_urls %}
+
+{% if has_export_permission %}
+<li style="list-style: none; display: flex; justify-content: flex-end;padding:5px;"><a style="padding: 10px; background-color: #ffffff; border-radius: 50px; min-width: 126px; text-align: center;" href="{% url opts|admin_urlname:'export' %}{{cl.get_query_string}}" class="export_link">{% trans "Export" %}</a></li>
+{% endif %}

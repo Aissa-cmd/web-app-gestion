@@ -1,0 +1,118 @@
+{% load i18n static %}
+<!DOCTYPE html>
+<html lang="{{ LANGUAGE_CODE|default:"en-us" }}" dir="{{ LANGUAGE_BIDI|yesno:'rtl,ltr,auto' }}">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="apple-touch-icon" sizes="76x76" href="/static/assets/img/apple-icon.png">
+  <link rel="icon" type="image/png" href="/static/assets/img/favicon.png">
+  <link rel="canonical" href="https://appseed.us/admin-dashboards/django-dashboard-black">
+  
+  <title>
+     {% block title %}{% endblock %}
+  </title>
+
+  <!--     Fonts and icons     -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,700,800" rel="stylesheet" />
+  <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+  <!-- Nucleo Icons -->
+  <link href="{% static '/css/nucleo-icons.css' %}" rel="stylesheet" />
+  <!-- CSS Files -->
+  <link href="{% static '/css/black-dashboard.css' %}" rel="stylesheet" />
+  <!-- CSS Just for demo purpose, don't include it in your project -->
+  <link href="{% static '/demo/demo.css' %}" rel="stylesheet" />
+
+  <!-- Specific Page CSS goes HERE  -->
+
+  {% block extrahead %}{% endblock %}
+
+  <style>
+    .object-tools {
+       display:flex;
+       justify-content: flex-end;
+       align-items: center;
+    }
+  </style>
+
+
+  {% block stylesheets %}{% endblock stylesheets %}
+
+  {% block extrastyle %}{% endblock extrastyle %}
+  <!-- <link rel="stylesheet" type="text/css" href="{% static 'admin/css/base.css' %}"> -->
+
+  {% block responsive %}
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static "admin/css/responsive.css" %}">
+    {% if LANGUAGE_BIDI %}<link rel="stylesheet" type="text/css" href="{% static "admin/css/responsive_rtl.css" %}">{% endif %}
+  {% endblock %}
+
+  {% block blockbots %}<meta name="robots" content="NONE,NOARCHIVE">{% endblock %}
+
+</head>
+
+<body lass="{% if is_popup %}popup {% endif %}{% block bodyclass %}{% endblock %}"
+  data-admin-utc-offset="{% now "Z" %}">
+  <div class="wrapper">
+
+        {% include "admin/nav_sidebar.html" %}
+    
+    {% if not is_popup and is_nav_sidebar_enabled %}
+      {% block nav-sidebar %}
+      {% endblock %}
+      {% endif %}
+    <div class="main-panel">
+
+      {% include 'includes/navigation.html' %}
+
+      {% block messages %}
+
+      <div class="content">
+        <!-- END Header -->
+    <!-- {% block breadcrumbs %}
+    <div class="breadcrumbs">
+    <a href="{% url 'admin:index' %}">{% translate 'Home' %}</a>
+    {% if title %} &rsaquo; {{ title }}{% endif %}
+    </div>
+    {% endblock %}
+ -->
+        {% if messages %}
+          <ul class="messagelist" style="padding-left: 0">{% for message in messages %}
+            <div {% if message.tags %} class="alert alert-{{ message.tags }}" {% else %} class="alert alert-primary" {% endif %}>
+          <button type="button" aria-hidden="true" class="close" data-dismiss="alert" aria-label="Close">
+            <i class="tim-icons icon-simple-remove"></i>
+          </button>
+          <span>{{ message|capfirst }}</span>
+        </div>
+          {% endfor %}</ul>
+        {% endif %}
+      {% endblock messages %}
+
+
+        {% block pretitle %}{% endblock %}
+        {% block content_title %}{% if title %}<h1>{{ title }}</h1>{% endif %}{% endblock %}
+        {% block content_subtitle %}{% if subtitle %}<h2>{{ subtitle }}</h2>{% endif %}{% endblock %}
+        {% block content %}{% endblock content %}
+
+      </div>
+
+
+    </div>
+    
+  </div>
+
+  {% include 'includes/fixed-plugin.html' %}
+
+  {% include 'includes/scripts.html' %}
+
+  {% include 'includes/scripts-sidebar.html' %}
+
+  <!-- Specific Page JS goes HERE  -->
+  {% block javascripts %}{% endblock javascripts %}
+
+  {% block extrascripts %}{% endblock extrascripts %}
+
+
+</body>
+
+</html>

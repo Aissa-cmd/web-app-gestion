@@ -1,0 +1,8 @@
+{% load i18n %}
+<h3>{% blocktranslate with filter_title=title %} By {{ filter_title }} {% endblocktranslate %}</h3>
+<ul style="list-style: none; padding: 0;">
+{% for choice in choices %}
+    <li {% if choice.selected %} style="border-left: 9px solid #2a6cf5;padding-left: 10px;background: white;" {% endif %}>
+    <a href="{{ choice.query_string|iriencode }}" {% if choice.selected %} style="color: black;font-weight: bold;" {% else %} style="color: #ffffff;" {% endif %} title="{{ choice.display }}">{{ choice.display }}</a></li>
+{% endfor %}
+</ul>

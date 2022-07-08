@@ -1,0 +1,66 @@
+{% load widget_tweaks %}
+
+<style>
+    option {
+        color: black;
+    }
+    .submit-row {
+        display: flex;
+        justify-content: flex-end;
+    }
+    .input-label-container{
+        width: 100%;
+    }
+    .input-width {
+        width: 20em;
+    }
+    select:not([class*="filtered"]) {
+        max-width: 20em;
+    }
+    textarea.form-control {
+        padding: 5px 10px;
+        width: 40em;
+        border: 1px solid #2b3553;
+        border-radius: 0.4285rem;
+    }
+    textarea.form-control:focus {
+        border: 1px solid #e14eca;
+    }
+    #id_password {
+        width: fit-content;
+        height: fit-content;
+        padding: 10px;
+    }
+</style>
+
+<fieldset class="module aligned {{ fieldset.classes }}">
+    {% if fieldset.name %}<h2 class="card" style="padding: 10px;">{{ fieldset.name }}</h2>{% endif %}
+    {% if fieldset.description %}
+        <div class="description">{{ fieldset.description|safe }}</div>
+    {% endif %}
+    {% for line in fieldset %}
+        <div style="padding: 10px;" class="form-row{% if line.fields|length_is:'1' and line.errors %} errors{% endif %}{% if not line.has_visible_field %} hidden{% endif %}{% for field in line %}{% if field.field.name %} field-{{ field.field.name }}{% endif %}{% endfor %}">
+            {% for field in line %}
+                <div {% if not line.fields|length_is:'1' %} class="fieldBox{% if field.field.name %} field-{{ field.field.name }}{% endif %}{% if not field.is_readonly and field.errors %} errors{% endif %}{% if field.field.is_hidden %} hidden{% endif %}"{% elif field.is_checkbox %} class="checkbox-row" {% else %} class="input-label-container" {% endif %}>
+                    {% if field.is_checkbox %}
+                        {{ field.field }}{{ field.label_tag }}
+                    {% else %}
+                        {{ field.label_tag }}
+                        
+                        {% if field.is_readonly %}
+                            <div class="readonly">{{ field.contents }}</div>
+                        {% else %}
+                            {{ field.field|add_class:"form-control input-width" }}
+                        {% endif %}
+                    {% endif %}
+                    {% if field.field.help_text %}
+                        <div class="help">{{ field.field.help_text|safe }}</div>
+
+                    {% if not line.fields|length_is:'1' and not field.is_readonly %}{{ field.errors }}{% endif %}
+                    {% endif %}
+                </div>
+            {% endfor %}
+            {% if line.fields|length_is:'1' %}{{ line.errors }}{% endif %}
+        </div>
+    {% endfor %}
+</fieldset>

@@ -1,0 +1,269 @@
+{% extends "layouts/base.html" %}
+{% load i18n static sfe_cus_tags admin_urls %}
+
+{% block extrastyle %}{{ block.super }}<link rel="stylesheet" type="text/css" href="{% static "admin/css/dashboard.css" %}">{% endblock %}
+
+{% block coltype %}colMS{% endblock %}
+
+{% block bodyclass %}{{ block.super }} dashboard{% endblock %}
+
+{% block breadcrumbs %}{% endblock %}
+
+{% block nav-sidebar %}{% endblock %}
+
+{% block content %}
+<div id="content-main">
+
+  {% if request.user.is_superuser %}
+  <div class="row">
+    <div class="col-12" style="display: flex;justify-content: space-between;">
+      <div class="card alert" style="margin-right: 20px;padding: 15px;background-color: #419ef9;font-size: 20px;">
+        <span>
+          Today <strong>New</strong> orders
+        </span>
+        <span style="text-align: center;font-size: 4rem;margin-top: 10px;">{{ today_stats|dict_key:'NEW' }}</span>
+        <span>&asymp; {{ today_stats|dict_key:'NEW_ESTM' }}</span>
+      </div>
+      <div class="card alert" style="padding: 15px;background-color: #29f4cd;font-size: 20px;">
+        <span>
+          Today <strong>Confirmed</strong> orders
+        </span>
+        <span style="text-align: center;font-size: 4rem;margin-top: 10px;">{{ today_stats|dict_key:'CONFIRMED' }}</span>
+        <span>&asymp; {{ today_stats|dict_key:'CONFIRMED_ESTM' }}</span>
+      </div>
+      <div class="card alert" style="margin-left: 20px;padding: 15px;background-color: #fd77a4;font-size: 20px;">
+        <span>
+          Today <strong>Delivered</strong> orders
+        </span>
+        <span style="text-align: center;font-size: 4rem;margin-top: 10px;">{{ today_stats|dict_key:'DELIVERED' }}</span>
+        <span>&asymp; {{ today_stats|dict_key:'DELIVERED_ESTM' }}</span>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+      <div class="col-12">
+        <div class="card card-chart">
+          <div class="card-header ">
+            <div class="row" style="flex-direction: column;">
+              <div style="display: flex;">
+                <div class="col-sm-6 text-left">
+                  <h2 class="card-title">Orders</h2>
+                  <h5 class="card-category">Statistics for year: {{ order_stat_year }}</h5>
+                </div>
+                <div class="col-sm-6">
+                  <div class="btn-group btn-group-toggle float-right" data-toggle="buttons">
+                    <label class="btn btn-sm btn-primary btn-simple active" id="0">
+                      <input type="radio" name="options" checked>
+                      <span class="d-none d-sm-block d-md-block d-lg-block d-xl-block">Delivered</span>
+                      <span class="d-block d-sm-none">
+                        <i class="tim-icons icon-single-02"></i>
+                      </span>
+                    </label>
+                    <label class="btn btn-sm btn-primary btn-simple" id="1">
+                      <input type="radio" class="d-none d-sm-none" name="options">
+                      <span class="d-none d-sm-block d-md-block d-lg-block d-xl-block">Returned</span>
+                      <span class="d-block d-sm-none">
+                        <i class="tim-icons icon-gift-2"></i>
+                      </span>
+                    </label>
+                    <label class="btn btn-sm btn-primary btn-simple" id="2">
+                      <input type="radio" class="d-none" name="options">
+                      <span class="d-none d-sm-block d-md-block d-lg-block d-xl-block">Cancelled</span>
+                      <span class="d-block d-sm-none">
+                        <i class="tim-icons icon-tap-02"></i>
+                      </span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div style="display: flex;justify-content: space-between;">
+                <div style="position: relative; left: 14px;">
+                  <span>Delivered: <strong>{{ orders_stat_avg|dict_key:'DELIVERED' }}%</strong></span>
+                  <span>-</span>
+                  <span>Returned: <strong>{{ orders_stat_avg|dict_key:'RETURNED' }}%</strong></span>
+                  <span>-</span>
+                  <span>Cancelled: <strong>{{ orders_stat_avg|dict_key:'CANCELLED' }}%</strong></span>
+                </div>
+                <div class="dropdown" style="top: 0; position: relative;">
+                  <button type="button" class="btn btn-link dropdown-toggle btn-icon" data-toggle="dropdown">
+                    <i class="tim-icons icon-settings-gear-63"></i>
+                  </button>
+                  <div class="dropdown-menu dropdown-menu-right" style="padding: 10px;width: 250px;" aria-labelledby="dropdownMenuLink">
+                    <form action="">
+                      <div>
+                        <!-- yearn -->
+                        {% for pair in search_query_args %}
+                        {% if pair.1 is not None and pair.0 != 'stat_order_year' %}
+                        <input type="hidden" name="{{ pair.0 }}" value="{{ pair.1 }}">
+                        {% endif %}
+                        {% endfor %}
+                        <label style="color: black;">Year:</label>
+                        <select style="color: black;" class="form-control" name="stat_order_year" id="agent_id">
+                          {% for year in years_options %}
+                          <option value="{{ year }}">{{ year }}</option>
+                          {% endfor %}
+                        </select>
+                      </div>
+                      <div>
+                        <input type="submit" value="Search" class="btn btn-primary" style="width: 100%;">
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="chart-area">
+              <canvas id="chartBig1"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12">
+        <div class="card card-chart">
+          <div class="card-header">
+            <div class="row" style="flex-direction: column;">
+              <div style="display: flex;margin-bottom: -62px;">
+                <div class="col-sm-6 text-left">
+                  <h2 class="card-title">Agent Engagement</h2>
+                  <h5 class="card-category">
+                    Statistics for Agent: 
+                    {% if agent_to_show %}
+                    <strong>
+                      <a href="{% url 'admin:main_user_change' agent_to_show.id %}">
+                      {{ agent_to_show.username }}({{ agent_to_show.first_name }} {{ agent_to_show.last_name }})
+                      </a>
+                    </strong> - Year: 
+                    <strong>{{ agent_stat_year }}</strong>
+                    {% else %}
+                    <strong>
+                      -
+                    </strong> - Year: 
+                    <strong>-</strong>
+                    {% endif %}
+                    
+                  </h5>
+                </div>
+                <div class="col-sm-6">
+                  <div class="btn-group btn-group-toggle float-right" data-toggle="buttons">
+                    <div class="dropdown" style="top: 0; right: 0; position: relative;">
+                      <button type="button" class="btn btn-link dropdown-toggle btn-icon" data-toggle="dropdown">
+                        <i class="tim-icons icon-settings-gear-63"></i>
+                      </button>
+                      <div class="dropdown-menu dropdown-menu-right" style="padding: 10px;width: 250px;" aria-labelledby="dropdownMenuLink">
+                        <form action="">
+                          {% for pair in search_query_args %}
+                          {% if pair.1 is not None and pair.0 != 'stat_agent_id' and pair.0 != 'stat_agent_year' %}
+                          <input type="hidden" name="{{ pair.0 }}" value="{{ pair.1 }}">
+                          {% endif %}
+                          {% endfor %}
+                          <div>
+                            <!-- agent  -->
+                            <label style="color: black;">Agent:</label>
+                            <select style="color: black;" class="form-control" name="stat_agent_id" id="agent_id">
+                              {% for agent in all_agents %}
+                              <option value="{{ agent.id }}">{{ agent.username }}({{ agent.first_name }} {{ agent.last_name }})</option>
+                              {% endfor %}
+                            </select>
+                          </div>
+                          <div>
+                            <!-- yearn -->
+                            <label style="color: black;">Year:</label>
+                            <select style="color: black;" class="form-control" name="stat_agent_year" id="agent_id">
+                              {% for year in years_options %}
+                              <option value="{{ year }}">{{ year }}</option>
+                              {% endfor %}
+                            </select>
+                          </div>
+                          <div>
+                            <input type="submit" value="Search" class="btn btn-primary" style="width: 100%;">
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+          </div>
+
+          <div style="display: flex;justify-content: space-between;">
+            <div style="position: relative; left: 14px;">
+              <span>Delivered: <strong>{{ agent_stat_avg|dict_key:'DELIVERED' }}%</strong></span>
+              <span>-</span>
+              <span>Returned: <strong>{{ agent_stat_avg|dict_key:'RETURNED' }}%</strong></span>
+            </div>
+          </div>
+
+        <div class="card-body">
+          <div class="chart-area">
+            <canvas id="chartLineGreen"></canvas>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+    {% endif %}
+    
+    <div>
+      <div class="card" style="width: 300px">
+        <h2 class="card-header">{% translate 'Recent actions' %}</h2>
+        <div style="background: rgba(255, 255, 255, 0.1);height: 1px;margin: 9px 10px;"></div>
+        <div class="card-body">
+        <h3 style="font-size: 18px;margin-bottom: 17px;">{% translate 'My actions' %}</h3>
+            {% load log %}
+            {% get_admin_log 10 as admin_log for_user user %}
+            {% if not admin_log %}
+            <p>{% translate 'None available' %}</p>
+            {% else %}
+            <ul style="padding-left: 0;">
+            {% for entry in admin_log %}
+            <li style="line-height: 1.2;margin-bottom: 10px;padding-left: 18px;list-style: none;font-size: 13px;" class="{% if entry.is_addition %}addlink{% endif %}{% if entry.is_change %}changelink{% endif %}{% if entry.is_deletion %}deletelink{% endif %}">
+                {% if entry.is_deletion or not entry.get_admin_url %}
+                    {{ entry.object_repr }}
+                {% else %}
+                    <a href="{{ entry.get_admin_url }}">{{ entry.object_repr }}</a>
+                {% endif %}
+                <br>
+                {% if entry.content_type %}
+                    <span class="mini quiet">{% filter capfirst %}{{ entry.content_type.name }}{% endfilter %}</span>
+                {% else %}
+                    <span class="mini quiet">{% translate 'Unknown content' %}</span>
+                {% endif %}
+            </li>
+            {% endfor %}
+            </ul>
+            {% endif %}
+        </div>
+      </div>
+    </div>
+
+</div>
+{% endblock %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+  
+  {{ orders_stat_delivered|json_script:"orders_stat_delivered" }}
+  {{ orders_stat_cancelled|json_script:"orders_stat_cancelled" }}
+  {{ orders_stat_retourned|json_script:"orders_stat_retourned" }}
+  {{ agent_stat_delivered|json_script:"agent_stat_delivered" }}
+  {{ agent_stat_returned|json_script:"agent_stat_returned" }}
+  <script>
+    $(document).ready(function() {
+      // Javascript method's body can be found in assets/js/demos.js
+      demo.initDashboardPageCharts(
+        Object.values(JSON.parse(document.getElementById("orders_stat_delivered").textContent)),
+        Object.values(JSON.parse(document.getElementById("orders_stat_cancelled").textContent)),
+        Object.values(JSON.parse(document.getElementById("orders_stat_retourned").textContent)),
+        Object.values(JSON.parse(document.getElementById("agent_stat_delivered").textContent)),
+        Object.values(JSON.parse(document.getElementById("agent_stat_returned").textContent))
+      );
+
+    });
+  </script>
+
+{% endblock javascripts %}
+

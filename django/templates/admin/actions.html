@@ -1,0 +1,30 @@
+{% load i18n widget_tweaks %}
+
+<style>
+  option {
+    color: black;
+  }
+</style>
+<div class="actions" style="display: flex; align-items: center; margin-bottom: 16px;">
+  {% block actions %}
+    {% block actions-form %}
+    {% for field in action_form %}{% if field.label %}<label style="display: flex; align-items: center; margin-bottom: 0;">
+      <span style="margin-right: 5px">{{ field.label }}</span> {% endif %}{{ field|add_class:"form-control" }}{% if field.label %}</label>{% endif %}{% endfor %}
+    {% endblock %}
+    {% block actions-submit %}
+    <button type="submit" style="margin-right: 5px;" class="btn" title="{% translate "Run the selected action" %}" name="index" value="{{ action_index|default:0 }}">{% translate "Go" %}</button>
+    {% endblock %}
+    {% block actions-counter %}
+    {% if actions_selection_counter %}
+        <span class="action-counter" data-actions-icnt="{{ cl.result_list|length }}">{{ selection_note }}</span>
+        {% if cl.result_count != cl.result_list|length %}
+        <span class="all hidden">{{ selection_note_all }}</span>
+        <span class="question hidden">
+            <a href="#" title="{% translate "Click here to select the objects across all pages" %}">{% blocktranslate with cl.result_count as total_count %}Select all {{ total_count }} {{ module_name }}{% endblocktranslate %}</a>
+        </span>
+        <span class="clear hidden"><a href="#">{% translate "Clear selection" %}</a></span>
+        {% endif %}
+    {% endif %}
+    {% endblock %}
+  {% endblock %}
+</div>

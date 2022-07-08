@@ -1,0 +1,50 @@
+{% load i18n static %}
+{% if cl.search_fields %}
+
+<style>
+  .search-submit-btn {
+  	border: none;
+    min-height: 37px;
+    border-radius: 0 0.4285rem 0.4285rem 0;
+    background: #344675;
+    background-image: linear-gradient(to bottom left, #344675, #263148, #344675);
+    background-size: 210% 210%;
+    background-position: top right;
+    background-color: #344675;
+    transition: all 0.15s ease;
+    box-shadow: none;
+    color: #ffffff;
+  }
+
+  .search-input {
+  	border: none !important;
+  }
+
+  .search-input:focus .search-box-container {
+  	border-color: #e14eca;
+    background-color: transparent;
+    box-shadow: none;
+  }
+
+  .search-box-container {
+  	display: flex;
+    align-items: center;
+    max-width: fit-content !important;
+    padding-right: 0;
+  }
+</style>
+<div style="margin-bottom: 16px;" id="toolbar"><form id="changelist-search" method="get">
+<div class="form-control search-box-container" style="display: flex; align-items: center;"><!-- DIV needed for valid HTML -->
+<label for="searchbar" style="margin-bottom: 0;"><img src="{% static "admin/img/search.svg" %}" alt="Search"></label>
+<input style="max-width: 450px" class="form-control search-input" type="text" size="40" name="{{ search_var }}" value="{{ cl.query }}" id="searchbar" autofocus>
+<input class="search-submit-btn" type="submit" value="{% translate 'Search' %}">
+{% for pair in cl.params.items %}
+    {% if pair.0 != search_var %}<input type="hidden" name="{{ pair.0 }}" value="{{ pair.1 }}">{% endif %}
+{% endfor %}
+</div>
+{% if show_result_count %}
+    <span class="small quiet">{% blocktranslate count counter=cl.result_count %}{{ counter }} result{% plural %}{{ counter }} results{% endblocktranslate %} (<a href="?{% if cl.is_popup %}_popup=1{% endif %}">{% if cl.show_full_result_count %}{% blocktranslate with full_result_count=cl.full_result_count %}{{ full_result_count }} total{% endblocktranslate %}{% else %}{% translate "Show all" %}{% endif %}</a>)</span>
+{% endif %}
+</form>
+</div>
+{% endif %}

@@ -1,0 +1,12 @@
+{% load i18n admin_urls %}
+
+{% block object-tools-items %}
+  {% if has_add_permission %}
+  <li style="list-style: none; display: flex; justify-content: flex-end;padding:5px;">
+    {% url cl.opts|admin_urlname:'add' as add_url %}
+    <a href="{% add_preserved_filters add_url is_popup to_field %}" style="padding: 10px; background-color: #ffffff; border-radius: 50px; min-width: 126px; text-align: center;">
+      {% blocktranslate with cl.opts.verbose_name as name %}Add {{ name }}{% endblocktranslate %}
+    </a>
+  </li>
+  {% endif %}
+{% endblock %}

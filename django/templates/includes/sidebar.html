@@ -1,0 +1,76 @@
+{% load i18n %}
+
+
+
+    <div class="sidebar">
+      <div class="sidebar-wrapper">
+        <div class="logo" style="text-align: center;">
+          
+          <h4>MENU</h4>
+        </div>
+
+        <ul class="nav">
+       <!--  {% for app in app_list %}
+        {% for model in app.models %}
+          <li class="{% if 'index' in segment %} active {% endif %}">
+            <a href="{{ model.admin_url }}">
+              <i class="tim-icons icon-chart-pie-36"></i>
+              <p>{{ model.name }}</p>
+            </a>
+          </li>
+          {% endfor %}
+        {% endfor %} -->
+
+        <li class="{% if request.path == '/admin/' %} active {% endif %}">
+          <a href="/admin/">
+            <i class="tim-icons icon-chart-pie-36"></i>
+            <p style=" font-weight: bold;">Dashboard</p>
+          </a>
+        </li>
+
+        <li class="{% if 'group' in request.path %} active {% endif %}">
+          <a href="/admin/auth/group/">
+            <i class="tim-icons icon-badge"></i>
+            <p  style=" font-weight: bold;">groups Management</p>
+          </a>
+        </li>
+
+        <li class="{% if 'user' in request.path %} active {% endif %}">
+          <a href="/admin/main/user/">
+            <i class="tim-icons icon-single-02"></i>
+            <p  style=" font-weight: bold;">User Managemen</p>
+          </a>
+        </li>
+
+        <li class="{% if 'command' in request.path %} active {% endif %}">
+          <a href="/admin/main/command/">
+            <i class="tim-icons icon-cart"></i>
+            <p  style=" font-weight: bold;">Order management</p>
+          </a>
+        </li>
+
+        <li class="{% if 'domain' in request.path %} active {% endif %}">
+          <a href="/admin/main/domain/">
+            <i class="tim-icons icon-world"></i>
+            <p  style=" font-weight: bold;">domain management</p>
+          </a>
+        </li> 
+
+        <li class="{% if 'product' in request.path %} active {% endif %}">
+          <a href="/admin/main/product/">
+            <i class="tim-icons icon-basket-simple"></i>
+            <p  style=" font-weight: bold;">Product management</p>
+          </a>
+        </li>
+
+          <li>
+            <a href="{% url 'admin:logout' %}">
+              <i class="tim-icons icon-button-power"></i>
+              <p  style=" font-weight: bold;">LOUGOUT</p>
+            </a>
+          </li>
+                    
+        </ul>
+        
+      </div>
+    </div>

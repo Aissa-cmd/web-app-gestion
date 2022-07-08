@@ -1,0 +1,14 @@
+{% load admin_list %}
+{% load i18n %}
+<p style="display: flex; align-items: center; justify-content: space-between;" class="paginator">
+<span style="flex: 1;">{{ cl.result_count }} {% if cl.result_count == 1 %}{{ cl.opts.verbose_name }}{% else %}{{ cl.opts.verbose_name_plural }}{% endif %}</span>
+<span class="pagination-container-result-set">
+{% if pagination_required %}
+{% for i in page_range %}
+    {% paginator_number cl i %}
+{% endfor %}
+{% endif %}
+</span>
+{% if show_all_url %}<a style="padding: 10px" href="{{ show_all_url }}" class="showall">{% translate 'Show all' %}</a>{% endif %}
+{% if cl.formset and cl.result_count %}<input class="btn btn-info" type="submit" name="_save" class="default" value="{% translate 'Save' %}">{% endif %}
+</p>

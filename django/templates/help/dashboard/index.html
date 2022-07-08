@@ -1,0 +1,585 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="/static/help/assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.11">
+    
+    
+      
+        <title>Dashboard - User Guide</title>
+      
+    
+    
+      <link rel="stylesheet" href="/static/help/assets/stylesheets/main.8c5ef100.min.css">
+      
+        
+        <link rel="stylesheet" href="/static/help/assets/stylesheets/palette.9647289d.min.css">
+        
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="/static/help/stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#dashboard" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="User Guide" class="md-header__button md-logo" aria-label="User Guide" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            User Guide
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Dashboard
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="User Guide" class="md-nav__button md-logo" aria-label="User Guide" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    User Guide
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="/help/" class="md-nav__link">
+        Welcome to User Guide
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Dashboard
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="/help/dashboard/" class="md-nav__link md-nav__link--active">
+        Dashboard
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#admin-dashboard" class="md-nav__link">
+    Admin dashboard
+  </a>
+  
+    <nav class="md-nav" aria-label="Admin dashboard">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#today-numbers" class="md-nav__link">
+    Today numbers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#orders-statistics" class="md-nav__link">
+    Orders statistics
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#agent-engagement-statistics" class="md-nav__link">
+    Agent Engagement statistics
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recent-actions" class="md-nav__link">
+    Recent actions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#other-users-dashboard" class="md-nav__link">
+    Other users dashboard
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="/help/domains/" class="md-nav__link">
+        Domains
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="/help/groups/" class="md-nav__link">
+        Groups
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="/help/orders/" class="md-nav__link">
+        Orders
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="/help/products/" class="md-nav__link">
+        Products
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="/help/users/" class="md-nav__link">
+        Users
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#admin-dashboard" class="md-nav__link">
+    Admin dashboard
+  </a>
+  
+    <nav class="md-nav" aria-label="Admin dashboard">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#today-numbers" class="md-nav__link">
+    Today numbers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#orders-statistics" class="md-nav__link">
+    Orders statistics
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#agent-engagement-statistics" class="md-nav__link">
+    Agent Engagement statistics
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recent-actions" class="md-nav__link">
+    Recent actions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#other-users-dashboard" class="md-nav__link">
+    Other users dashboard
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<h1 id="dashboard">Dashboard</h1>
+<h2 id="admin-dashboard">Admin dashboard</h2>
+<p><img alt="Dashboard image" loading="lazy" src="/media/help/dashboard.png" />
+This is the dashboard shown to the admin users (users with role set to <strong><code>ADMIN</code></strong>) and it is broken down into four different sections: <code>Today numbers</code>, <code>Orders statistics</code>, <code>Agent Engagement statistics</code> and <code>Recent actions</code>.</p>
+<h3 id="today-numbers">Today numbers</h3>
+<p>This is the top part with three boxes (<span style="color: #419ef9">Blue</span>, <span style="color: #29f4cd">Green</span> and <span style="color: #fd77a4">Pink</span>) and they show the following information</p>
+<dl>
+<dt><code>Blue box</code></dt>
+<dd>
+<p>Shows the number of <strong><code>NEW</code></strong> orders that are created the day you are viewing the dashboard, with the total price of those orders.</p>
+</dd>
+<dt><code>Green box</code></dt>
+<dd>
+<p>Shows the number of <strong><code>CONFIRMED</code></strong> orders that are created the day you are viewing the dashboard, with the total price of those orders.</p>
+</dd>
+<dt><code>Pink box</code></dt>
+<dd>
+<p>Shows the number of <strong><code>DELIVERED</code></strong> orders that are created the day you are viewing the dashboard, with the total price of those orders.</p>
+</dd>
+</dl>
+<h3 id="orders-statistics">Orders statistics</h3>
+<p>This graph shows the statistics for the orders, by default it shows statistics for the year of viewing the dashboard.
+But you can choose which years' statistics to view by clicking on the gear icon <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M16 12a4 4 0 1 1-8 0 4 4 0 0 1 8 0zm-1.5 0a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/><path fill-rule="evenodd" d="M12 1c-.268 0-.534.01-.797.028-.763.055-1.345.617-1.512 1.304l-.352 1.45c-.02.078-.09.172-.225.22a8.45 8.45 0 0 0-.728.303c-.13.06-.246.044-.315.002l-1.274-.776c-.604-.368-1.412-.354-1.99.147-.403.348-.78.726-1.129 1.128-.5.579-.515 1.387-.147 1.99l.776 1.275c.042.069.059.185-.002.315-.112.237-.213.48-.302.728-.05.135-.143.206-.221.225l-1.45.352c-.687.167-1.249.749-1.304 1.512a11.149 11.149 0 0 0 0 1.594c.055.763.617 1.345 1.304 1.512l1.45.352c.078.02.172.09.22.225.09.248.191.491.303.729.06.129.044.245.002.314l-.776 1.274c-.368.604-.354 1.412.147 1.99.348.403.726.78 1.128 1.129.579.5 1.387.515 1.99.147l1.275-.776c.069-.042.185-.059.315.002.237.112.48.213.728.302.135.05.206.143.225.221l.352 1.45c.167.687.749 1.249 1.512 1.303a11.125 11.125 0 0 0 1.594 0c.763-.054 1.345-.616 1.512-1.303l.352-1.45c.02-.078.09-.172.225-.22.248-.09.491-.191.729-.303.129-.06.245-.044.314-.002l1.274.776c.604.368 1.412.354 1.99-.147.403-.348.78-.726 1.129-1.128.5-.579.515-1.387.147-1.99l-.776-1.275c-.042-.069-.059-.185.002-.315.112-.237.213-.48.302-.728.05-.135.143-.206.221-.225l1.45-.352c.687-.167 1.249-.749 1.303-1.512a11.125 11.125 0 0 0 0-1.594c-.054-.763-.616-1.345-1.303-1.512l-1.45-.352c-.078-.02-.172-.09-.22-.225a8.469 8.469 0 0 0-.303-.728c-.06-.13-.044-.246-.002-.315l.776-1.274c.368-.604.354-1.412-.147-1.99-.348-.403-.726-.78-1.128-1.129-.579-.5-1.387-.515-1.99-.147l-1.275.776c-.069.042-.185.059-.315-.002a8.465 8.465 0 0 0-.728-.302c-.135-.05-.206-.143-.225-.221l-.352-1.45c-.167-.687-.749-1.249-1.512-1.304A11.149 11.149 0 0 0 12 1zm-.69 1.525a9.648 9.648 0 0 1 1.38 0c.055.004.135.05.162.16l.351 1.45c.153.628.626 1.08 1.173 1.278.205.074.405.157.6.249a1.832 1.832 0 0 0 1.733-.074l1.275-.776c.097-.06.186-.036.228 0 .348.302.674.628.976.976.036.042.06.13 0 .228l-.776 1.274a1.832 1.832 0 0 0-.074 1.734c.092.195.175.395.248.6.198.547.652 1.02 1.278 1.172l1.45.353c.111.026.157.106.161.161a9.653 9.653 0 0 1 0 1.38c-.004.055-.05.135-.16.162l-1.45.351a1.833 1.833 0 0 0-1.278 1.173 6.926 6.926 0 0 1-.25.6 1.832 1.832 0 0 0 .075 1.733l.776 1.275c.06.097.036.186 0 .228a9.555 9.555 0 0 1-.976.976c-.042.036-.13.06-.228 0l-1.275-.776a1.832 1.832 0 0 0-1.733-.074 6.926 6.926 0 0 1-.6.248 1.833 1.833 0 0 0-1.172 1.278l-.353 1.45c-.026.111-.106.157-.161.161a9.653 9.653 0 0 1-1.38 0c-.055-.004-.135-.05-.162-.16l-.351-1.45a1.833 1.833 0 0 0-1.173-1.278 6.928 6.928 0 0 1-.6-.25 1.832 1.832 0 0 0-1.734.075l-1.274.776c-.097.06-.186.036-.228 0a9.56 9.56 0 0 1-.976-.976c-.036-.042-.06-.13 0-.228l.776-1.275a1.832 1.832 0 0 0 .074-1.733 6.948 6.948 0 0 1-.249-.6 1.833 1.833 0 0 0-1.277-1.172l-1.45-.353c-.111-.026-.157-.106-.161-.161a9.648 9.648 0 0 1 0-1.38c.004-.055.05-.135.16-.162l1.45-.351a1.833 1.833 0 0 0 1.278-1.173 6.95 6.95 0 0 1 .249-.6 1.832 1.832 0 0 0-.074-1.734l-.776-1.274c-.06-.097-.036-.186 0-.228.302-.348.628-.674.976-.976.042-.036.13-.06.228 0l1.274.776a1.832 1.832 0 0 0 1.734.074 6.95 6.95 0 0 1 .6-.249 1.833 1.833 0 0 0 1.172-1.277l.353-1.45c.026-.111.106-.157.161-.161z"/></svg></span> at top right corner of the graph</p>
+<figure>
+<p><img alt="Orders statistics" loading="lazy" src="/media/help/dashboard-orders-stat.png" /></p>
+</figure>
+<p>For the year you are viewing you can navigate between three different orders statistics using the buttons at the top right corner of the graph</p>
+<dl>
+<dt><code>Delivered</code></dt>
+<dd>
+<p>Shows the statistics for the delivered orders.</p>
+</dd>
+<dt><code>Returned</code></dt>
+<dd>
+<p>Shows the statistics for the returned orders.</p>
+</dd>
+<dt><code>Cancelled</code></dt>
+<dd>
+<p>Shows the statistics for the cancelled orders.</p>
+</dd>
+</dl>
+<h3 id="agent-engagement-statistics">Agent Engagement statistics</h3>
+<p>This graph shows the statistics for the agent engagement, by default it shows statistics for the first agent in the database.
+But you can choose which years' statistics to view by clicking on the gear icon <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M16 12a4 4 0 1 1-8 0 4 4 0 0 1 8 0zm-1.5 0a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/><path fill-rule="evenodd" d="M12 1c-.268 0-.534.01-.797.028-.763.055-1.345.617-1.512 1.304l-.352 1.45c-.02.078-.09.172-.225.22a8.45 8.45 0 0 0-.728.303c-.13.06-.246.044-.315.002l-1.274-.776c-.604-.368-1.412-.354-1.99.147-.403.348-.78.726-1.129 1.128-.5.579-.515 1.387-.147 1.99l.776 1.275c.042.069.059.185-.002.315-.112.237-.213.48-.302.728-.05.135-.143.206-.221.225l-1.45.352c-.687.167-1.249.749-1.304 1.512a11.149 11.149 0 0 0 0 1.594c.055.763.617 1.345 1.304 1.512l1.45.352c.078.02.172.09.22.225.09.248.191.491.303.729.06.129.044.245.002.314l-.776 1.274c-.368.604-.354 1.412.147 1.99.348.403.726.78 1.128 1.129.579.5 1.387.515 1.99.147l1.275-.776c.069-.042.185-.059.315.002.237.112.48.213.728.302.135.05.206.143.225.221l.352 1.45c.167.687.749 1.249 1.512 1.303a11.125 11.125 0 0 0 1.594 0c.763-.054 1.345-.616 1.512-1.303l.352-1.45c.02-.078.09-.172.225-.22.248-.09.491-.191.729-.303.129-.06.245-.044.314-.002l1.274.776c.604.368 1.412.354 1.99-.147.403-.348.78-.726 1.129-1.128.5-.579.515-1.387.147-1.99l-.776-1.275c-.042-.069-.059-.185.002-.315.112-.237.213-.48.302-.728.05-.135.143-.206.221-.225l1.45-.352c.687-.167 1.249-.749 1.303-1.512a11.125 11.125 0 0 0 0-1.594c-.054-.763-.616-1.345-1.303-1.512l-1.45-.352c-.078-.02-.172-.09-.22-.225a8.469 8.469 0 0 0-.303-.728c-.06-.13-.044-.246-.002-.315l.776-1.274c.368-.604.354-1.412-.147-1.99-.348-.403-.726-.78-1.128-1.129-.579-.5-1.387-.515-1.99-.147l-1.275.776c-.069.042-.185.059-.315-.002a8.465 8.465 0 0 0-.728-.302c-.135-.05-.206-.143-.225-.221l-.352-1.45c-.167-.687-.749-1.249-1.512-1.304A11.149 11.149 0 0 0 12 1zm-.69 1.525a9.648 9.648 0 0 1 1.38 0c.055.004.135.05.162.16l.351 1.45c.153.628.626 1.08 1.173 1.278.205.074.405.157.6.249a1.832 1.832 0 0 0 1.733-.074l1.275-.776c.097-.06.186-.036.228 0 .348.302.674.628.976.976.036.042.06.13 0 .228l-.776 1.274a1.832 1.832 0 0 0-.074 1.734c.092.195.175.395.248.6.198.547.652 1.02 1.278 1.172l1.45.353c.111.026.157.106.161.161a9.653 9.653 0 0 1 0 1.38c-.004.055-.05.135-.16.162l-1.45.351a1.833 1.833 0 0 0-1.278 1.173 6.926 6.926 0 0 1-.25.6 1.832 1.832 0 0 0 .075 1.733l.776 1.275c.06.097.036.186 0 .228a9.555 9.555 0 0 1-.976.976c-.042.036-.13.06-.228 0l-1.275-.776a1.832 1.832 0 0 0-1.733-.074 6.926 6.926 0 0 1-.6.248 1.833 1.833 0 0 0-1.172 1.278l-.353 1.45c-.026.111-.106.157-.161.161a9.653 9.653 0 0 1-1.38 0c-.055-.004-.135-.05-.162-.16l-.351-1.45a1.833 1.833 0 0 0-1.173-1.278 6.928 6.928 0 0 1-.6-.25 1.832 1.832 0 0 0-1.734.075l-1.274.776c-.097.06-.186.036-.228 0a9.56 9.56 0 0 1-.976-.976c-.036-.042-.06-.13 0-.228l.776-1.275a1.832 1.832 0 0 0 .074-1.733 6.948 6.948 0 0 1-.249-.6 1.833 1.833 0 0 0-1.277-1.172l-1.45-.353c-.111-.026-.157-.106-.161-.161a9.648 9.648 0 0 1 0-1.38c.004-.055.05-.135.16-.162l1.45-.351a1.833 1.833 0 0 0 1.278-1.173 6.95 6.95 0 0 1 .249-.6 1.832 1.832 0 0 0-.074-1.734l-.776-1.274c-.06-.097-.036-.186 0-.228.302-.348.628-.674.976-.976.042-.036.13-.06.228 0l1.274.776a1.832 1.832 0 0 0 1.734.074 6.95 6.95 0 0 1 .6-.249 1.833 1.833 0 0 0 1.172-1.277l.353-1.45c.026-.111.106-.157.161-.161z"/></svg></span> at top right corner of the graph</p>
+<figure>
+<p><img alt="Agent Engagement statistics" loading="lazy" src="/media/help/dashboard-agents-stat.png" /></p>
+</figure>
+<p>This graph contains two lines (<span style="color: #00d6b4">Green</span> and <span style="color: #d346b1">Rose</span>)</p>
+<dl>
+<dt><code>Green line</code></dt>
+<dd>
+<p>Shows the statistics for the orders that have been maked as <strong><code>CONFIRMED</code></strong> by the currenly viewing agent, and have been delivered.</p>
+</dd>
+<dt><code>Rose line</code></dt>
+<dd>
+<p>Shows the statistics for the orders that have been maked as <strong><code>CONFIRMED</code></strong> by the currenly viewing agent, and have been returned.</p>
+</dd>
+</dl>
+<h3 id="recent-actions">Recent actions</h3>
+<p>This is the box at the very bottom of the dashboard and it shows the recent actions that you have performed in the site.</p>
+<h2 id="other-users-dashboard">Other users dashboard</h2>
+<p><img alt="Dashboard image" loading="lazy" src="/media/help/dashboard-other.png" />
+The dashboard for all the other users only shows the recent actions.</p>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="/help/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Welcome to User Guide" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Welcome to User Guide
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="/help/domains/" class="md-footer__link md-footer__link--next" aria-label="Next: Domains" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Domains
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": ["search.highlight"], "search": "/static/help/assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="/static/help/assets/javascripts/bundle.748e2769.min.js"></script>
+      
+    
+  </body>
+</html>
